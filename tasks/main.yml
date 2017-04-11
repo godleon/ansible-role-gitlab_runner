@@ -1,3 +1,19 @@
 ---
 # tasks file for ansible-role-gitlab_runner
 - include: '{{ ansible_distribution | lower }}.yml'
+
+
+- name: unregister runner
+  shell: "gitlab-runner unregister
+          --name {{ gitlab_runner_name | default(ansible_hostname) }}"
+  ignore_errors: yes
+  
+
+- name: register runner
+  shell: "gitlab-runner register
+          --non-interactive
+          --name {{ gitlab_runner_name | default(ansible_hostname) }}
+          --url {{ gitlab_runner_coordinator_url }}
+          --registration-token {{ gitlab_runner_registration_token }}
+          --executor {{ gitlab_runner_executor }}
+          --docker-image {{ gitlab_runner_docker_image }}"
