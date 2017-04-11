@@ -1,2 +1,25 @@
 ---
 # defaults file for ansible-role-gitlab_runner
+
+# uncomment it if you want to customize the runner name
+#gitlab_runner_name: 'YOUR_RUNNER_NAME'
+
+gitlab_runner_coordinator_url: 'https://gitlab.com/ci'
+
+# project token
+gitlab_runner_registration_token: 'YOUR_GITLAB_PROJECT_TOKEN'
+
+# GitLab currently supports the following executors:
+#   - shell
+#   - docker
+#   - docker-ssh
+#   - virtualbox
+#   - parallels
+#   - ssh
+#   - kubernetes
+# https://docs.gitlab.com/runner/executors/README.html
+gitlab_runner_executor: 'docker'
+
+# The image keyword is the name of the Docker image that is present in the local Docker Engine (list all images with docker images) or any image that can be found at Docker Hub.
+# https://docs.gitlab.com/runner/executors/docker.html#the-image-keyword
+gitlab_runner_docker_image: 'ubuntu:xenial'
