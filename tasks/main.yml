@@ -6,6 +6,7 @@
 - name: unregister runner
   shell: "gitlab-runner unregister
           --name {{ gitlab_runner_name | default(ansible_hostname) }}"
+  when: gitlab_runner_registration_token != 'YOUR_GITLAB_PROJECT_TOKEN'
   ignore_errors: yes
   
 
@@ -17,3 +18,4 @@
           --registration-token {{ gitlab_runner_registration_token }}
           --executor {{ gitlab_runner_executor }}
           --docker-image {{ gitlab_runner_docker_image }}"
+  when: gitlab_runner_registration_token != 'YOUR_GITLAB_PROJECT_TOKEN'
