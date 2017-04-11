@@ -1,7 +1,10 @@
+[![Build Status](https://travis-ci.org/godleon/ansible-role-gitlab_runner.svg?branch=master)](https://travis-ci.org/godleon/ansible-role-gitlab_runner)
+
+
 Role Name
 =========
 
-A brief description of the role goes here.
+**godleon.gitlab_runner**
 
 Requirements
 ------------
@@ -25,12 +28,12 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: godleon.gitlab_runner }
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
