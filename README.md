@@ -9,7 +9,10 @@ Role Name
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+### Software
+
+- Python2.7 (**Ubuntu Xenial**)
+> sudo apt-get update && sudo apt-get -y install python2.7
 
 Role Variables
 --------------
@@ -19,16 +22,21 @@ A description of the settable variables for this role should go here, including 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+- godeon.docker
+
+> ansible-galaxy install godleon.docker
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: godleon.gitlab_runner }
+```yml
+- hosts: servers
+  roles:
+    - { role: godleon.docker }
+    - { role: godleon.gitlab_runner }
+```
 
 License
 -------
@@ -38,4 +46,6 @@ MIT
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+**Leon Tseng** 
+
+-  [godleon@GitHub](https://github.com/godleon)
