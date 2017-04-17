@@ -19,3 +19,8 @@
           --executor {{ gitlab_runner_executor }}
           --docker-image {{ gitlab_runner_docker_image }}"
   when: gitlab_runner_registration_token != 'YOUR_GITLAB_PROJECT_TOKEN'
+
+
+- name: verify deleted runner
+  shell: "gitlab-runner verify --delete"
+  when: gitlab_runner_registration_token != 'YOUR_GITLAB_PROJECT_TOKEN'
